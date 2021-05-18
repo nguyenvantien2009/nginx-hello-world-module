@@ -16,7 +16,7 @@ done by [Antoine Bonavita](http://antoine.bonavita.free.fr/) that also
 mantains a [Nginx Discovery](http://www.nginx-discovery.com/) blog to
 document his journey on Nginx module development.
 
-## Build
+## Step 1: Compile and Build Module from C/C++ Code.
 
 1. Check `nginx` version in server by 
 ```sh
@@ -96,14 +96,35 @@ Next with
 make modules
 ```
 
-## Install 
+## Step 2: Install Module to Nginx.
 
 5. After (4) we have `nginx-hello-world-module.so` in {path/of/nginx-1.14.0}/objs. Let copy it to `modules` folder of current nginx.
 
 ```sh
+# get path of modules in current nginx
+nginx -V 2>&1 | tr -- - "\n" | grep prefix
+```
 
+> ## Output: 
+> prefix
+> prefix=/usr/share/nginx
+> so path of module is `/usr/share/nginx/modules`
 
-## Configuration
+```sh
+# copy nginx-hello-world-module.so to /usr/share/nginx/modules
+# in {path/of/nginx-1.14.0} 
+cp ./objs/nginx-hello-world-module.so /usr/share/nginx/modules
+```
+
+6. Load module to nginx web server
+
+```sh
+nano /etc/nginx/nginx.cnf 
+```
+
+Add `load_module modules/ngx_http_hello_world_module.so;` in line 3. Then reload nginx by `nginx -s reload`.
+
+## Step 3: Config Virtual Host to apply module.
 
 
 
