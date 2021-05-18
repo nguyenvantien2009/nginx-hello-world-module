@@ -164,3 +164,9 @@ curl http://localhost
 
 # Output: should is `hello world` in web site.
 ```
+
+## License
+
+Copyright (C) 2011 by Dominic Fallows, António P. P. Almeida <appa@perusio.net>
+nguyenvantien2009 changed:
+- Changed readme.md
