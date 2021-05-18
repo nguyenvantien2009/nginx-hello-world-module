@@ -134,7 +134,7 @@ nano /etc/nginx/nginx.cnf
 
 Need change code in line 
 
-```sh class:"lineNo"
+```javascript class:"lineNo"
 ....
 load_module modules/ngx_http_hello_world_module.so;
 ...
