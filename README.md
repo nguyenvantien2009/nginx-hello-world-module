@@ -126,7 +126,35 @@ Add `load_module modules/ngx_http_hello_world_module.so;` in line 3. Then reload
 
 ## Step 3: Config Virtual Host to apply module.
 
+We need config virtual host for website to use module.
 
+```sh
+nano /etc/nginx/nginx.cnf
+```
+
+Need change code in line 
+
+```=
+....
+load_module modules/ngx_http_hello_world_module.so;
+...
+
+server {
+   ...
+   
+   server {
+      listen 80;
+      
+      location / {
+         hello_world;
+      }
+      
+      ...
+      # inclue /etc/nginx/sites-enabled/*;
+   }
+}
+...
+```
 
 
 ## Installation
