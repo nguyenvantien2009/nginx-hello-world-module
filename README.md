@@ -16,6 +16,16 @@ done by [Antoine Bonavita](http://antoine.bonavita.free.fr/) that also
 mantains a [Nginx Discovery](http://www.nginx-discovery.com/) blog to
 document his journey on Nginx module development.
 
+## Build
+
+1. Check `nginx` version in server by 
+```sh
+nginx -v # with `v` is lowercase charecter.
+```
+> Get current version of Nginx.
+
+2. 
+
 ## Installation
 
    1. Configure Nginx adding this module with:
